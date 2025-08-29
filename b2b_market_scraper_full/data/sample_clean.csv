@@ -1,0 +1,5 @@
+site,category,title,price_raw,min_order,product_url,company_name,company_url,location,description,price_min,price_max,currency,city,state,price_mid
+indiamart,electronics,LED TV 42 inch,"₹ 12,000 - ₹ 15,000 / Piece",10 Piece,,Acme India,,"Mumbai, Maharashtra",,12000.0,15000.0,INR,Mumbai,Maharashtra,13500.0
+alibaba,electronics,Bluetooth Headphones,$20 - $25 / Piece,2 Piece,,Shenzhen Audio Co,,"Shenzhen, Guangdong",,20.0,25.0,USD,Shenzhen,Guangdong,22.5
+indiamart,textiles,Cotton Fabric Roll,,50 Meter,,Textile Hub,,"Surat, Gujarat",,,,,Surat,Gujarat,
+alibaba,industrial_machinery,CNC Lathe,$1500 / Unit,1 Unit,,Machina Works,,"Delhi, Delhi",,1500.0,1500.0,USD,Delhi,Delhi,1500.0
