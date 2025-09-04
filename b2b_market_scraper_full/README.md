@@ -2,7 +2,7 @@
 
 An end-to-end mini project to crawl product listings from **IndiaMART** and **Alibaba**, normalize and store the data, and run **Exploratory Data Analysis (EDA)** with charts.
 
-> ⚠️ **Important**: Before running the crawler on any website, review and comply with the website's Terms of Service and robots.txt. This code includes a robots.txt pre-check and rate limiting, but *you* are responsible for legal and ethical use.
+>**Important**: Before running the crawler on any website, review and comply with the website's Terms of Service and robots.txt. This code includes a robots.txt pre-check and rate limiting, but *you* are responsible for legal and ethical use.
 
 ---
 
@@ -28,47 +28,6 @@ python src/etl/normalize.py --inputs data/indiamart_raw.jsonl --out-csv data/ind
 # 6) EDA (creates charts under outputs/figures/ and a summary CSV)
 python src/eda/eda.py --input data/indiamart_clean.csv --report outputs/eda_summary.json
 ```
-
-### Optional: Run Alibaba
-```bash
-python run_crawl.py --site alibaba --categories config/alibaba_categories.json --max-pages 1 --out data/alibaba_raw.jsonl
-python src/etl/normalize.py --inputs data/alibaba_raw.jsonl --out-csv data/alibaba_clean.csv --out-parquet data/alibaba_clean.parquet
-python src/eda/eda.py --input data/alibaba_clean.csv --report outputs/eda_summary_alibaba.json
-```
-
----
-
-## Project Structure
-
-```
-b2b_market_scraper/
-├── config/
-│   ├── indiamart_categories.json      # Seed category URLs
-│   └── alibaba_categories.json
-├── data/                              # Raw and cleaned data
-├── outputs/
-│   └── figures/                       # Charts from EDA
-├── src/
-│   ├── crawler/
-│   │   ├── base.py
-│   │   ├── indiamart.py
-│   │   └── alibaba.py
-│   ├── etl/
-│   │   └── normalize.py
-│   ├── eda/
-│   │   └── eda.py
-│   ├── storage/
-│   │   └── writer.py
-│   └── utils/
-│       ├── robots.py
-│       └── text.py
-├── run_crawl.py                        # CLI to run crawlers
-├── requirements.txt
-└── README.md
-```
-
----
-
 ## Design Notes
 
 - **Playwright (Chromium)** is used for resilient scraping of dynamic pages and to reduce blocks by respecting delays and realistic headers.
